@@ -62,8 +62,14 @@ button {
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	transition: transform 20ms ease-in;
+    transform: translateY(20%);
 }
 
 button:active {
 	transform: scale(0.95);
+}
+
+.formula {
+    color:#2e0afa;
+    font-weight: bold;
 }
