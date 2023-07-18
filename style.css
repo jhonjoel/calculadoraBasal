@@ -42,6 +42,19 @@ body {
     overflow: hidden;
     padding: 40px;
 }
+.contenido1 {
+    /* Estas tres líneas van a centrar el contenido verticalmente dentro de cada div */
+    display: none;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    overflow: hidden;
+    padding: 40px;
+}
+
+.descripcion {
+    text-align: left;
+}
 
 input {
     width: 70%;
@@ -71,12 +84,13 @@ button:active {
 .item {
     color: #2e0afa;
     font-weight: bold;
+    
 }
 
 .resultado {
     color: #0A81D1;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 20px;
     margin-bottom: 5px;
     display: none;
 }
