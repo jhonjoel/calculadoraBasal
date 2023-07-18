@@ -4,6 +4,8 @@ const RESULTADO3 = document.getElementById("resultado3");
 const BUTTON = document.getElementById("calcular");
 const INPUT = document.getElementById("peso");
 const ERROR = document.getElementById("error");
+const METODO_HOLLIDAY = document.getElementById("holliday")
+const METODO_SUPERFICIE = document.getElementById("superficie")
 
 BUTTON.addEventListener("click", () => {
   let peso = parseFloat(INPUT.value);
@@ -20,15 +22,19 @@ BUTTON.addEventListener("click", () => {
     RESULTADO2.style.display = "block";
     RESULTADO3.innerHTML = sc[2];
     RESULTADO3.style.display = "none";
+    METODO_SUPERFICIE.style.display = "block"
+    METODO_HOLLIDAY.style.display = "none"
     ERROR.style.display = "none";
   } else {
     let hollidaySegar = HollidaySegar(peso);
-    RESULTADO1.innerHTML = " Docificación diaria: " + hollidaySegar [0];
+    RESULTADO1.innerHTML = " Docificación diaria: " + hollidaySegar [0] + " cc";
     RESULTADO1.style.display = "block";
     RESULTADO2.innerHTML = hollidaySegar [1] + " cc/h";
     RESULTADO2.style.display = "block";
     RESULTADO3.innerHTML = "m+m/2: " + hollidaySegar [2] + " cc/h";
     RESULTADO3.style.display = "block";
+    METODO_HOLLIDAY.style.display = "block"
+    METODO_SUPERFICIE.style.display = "none"
     ERROR.style.display = "none";
   }
 });
@@ -51,12 +57,8 @@ function HollidaySegar(peso) {
     resultado = 1500 + peso*20;
   }
   
-  resultados.push((resultado).toFixed(2))
+  resultados.push((resultado).toFixed(0))
   resultados.push((resultado / 24).toFixed(2))
   resultados.push((resultado / 24 * 1.5).toFixed(2))
   return resultados
 }
-
-
-
-
