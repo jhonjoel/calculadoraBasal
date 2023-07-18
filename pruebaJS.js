@@ -1,0 +1,59 @@
+const RESULTADO1 = document.getElementById("resultado1");
+const RESULTADO2 = document.getElementById("resultado2");
+const RESULTADO3 = document.getElementById("resultado3");
+const BUTTON = document.getElementById("calcular");
+const INPUT = document.getElementById("peso");
+const ERROR = document.getElementById("error");
+
+BUTTON.addEventListener("click", () => {
+  let peso = parseFloat(INPUT.value);
+
+  if (isNaN(peso) || peso <= 0) {
+    ERROR.style.display = "block";
+    RESULTADO1.style.display = "none";
+    RESULTADO2.style.display = "none";
+  } else if (peso > 30) {
+    let sc = SuperficieCorporal(peso);
+    RESULTADO1.innerHTML = sc[0] + " cc/h";
+    RESULTADO1.style.display = "block";
+    RESULTADO2.innerHTML = sc[1] + " cc/h";
+    RESULTADO2.style.display = "block";
+    ERROR.style.display = "none";
+  } else {
+    let hollidaySegar = HollidaySegar(peso);
+    RESULTADO1.innerHTML = hollidaySegar [0] + " cc/h";
+    RESULTADO1.style.display = "block";
+    RESULTADO2.innerHTML = hollidaySegar [1] + " cc/h";
+    RESULTADO2.style.display = "block";
+    RESULTADO3.innerHTML = hollidaySegar [2] + " cc/h";
+    RESULTADO3.style.display = "block";
+    ERROR.style.display = "none";
+  }
+});
+
+function SuperficieCorporal(peso) {
+  let superficieCorporal = ((peso * 4) + 7) / (peso + 90);
+  return [(superficieCorporal*1500/24).toFixed(2), (superficieCorporal*2000/24).toFixed(2)];
+}
+
+function HollidaySegar(peso) {
+  let resultado = 0;
+  let resultados = [];
+  if (peso <= 10) {
+    resultado = peso*100;
+  } else if (peso <20) {
+    peso -= 10
+    resultado = 1000 + peso*50 ;
+  } else {
+    peso -= 20
+    resultado = 1500 + peso*20;
+  }
+  
+  resultados.push((resultado).toFixed(2))
+  resultados.push((resultado / 24).toFixed(2))
+  resultados.push((resultado / 24 * 1.5).toFixed(2))
+  return resultados
+}
+
+
+
