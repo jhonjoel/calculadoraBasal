@@ -14,18 +14,20 @@ BUTTON.addEventListener("click", () => {
     RESULTADO2.style.display = "none";
   } else if (peso > 30) {
     let sc = SuperficieCorporal(peso);
-    RESULTADO1.innerHTML = sc[0] + " cc/h";
+    RESULTADO1.innerHTML = "Volumen por hora (1500): " + sc[0] + " cc/h";
     RESULTADO1.style.display = "block";
-    RESULTADO2.innerHTML = sc[1] + " cc/h";
+    RESULTADO2.innerHTML = "Volumen por hora (2000): " + sc[1] + " cc/h";
     RESULTADO2.style.display = "block";
+    RESULTADO3.innerHTML = sc[2];
+    RESULTADO3.style.display = "none";
     ERROR.style.display = "none";
   } else {
     let hollidaySegar = HollidaySegar(peso);
-    RESULTADO1.innerHTML = hollidaySegar [0] + " cc/h";
+    RESULTADO1.innerHTML = " Docificación diaria: " + hollidaySegar [0];
     RESULTADO1.style.display = "block";
     RESULTADO2.innerHTML = hollidaySegar [1] + " cc/h";
     RESULTADO2.style.display = "block";
-    RESULTADO3.innerHTML = hollidaySegar [2] + " cc/h";
+    RESULTADO3.innerHTML = "m+m/2: " + hollidaySegar [2] + " cc/h";
     RESULTADO3.style.display = "block";
     ERROR.style.display = "none";
   }
@@ -54,6 +56,7 @@ function HollidaySegar(peso) {
   resultados.push((resultado / 24 * 1.5).toFixed(2))
   return resultados
 }
+
 
 
 
