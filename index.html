@@ -5,19 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
     <link rel="stylesheet" href="style.css">
+    <script src="pruebaJS.js" defer></script>
 </head>
 <body>
     <div id="contenedor">
       <div id="calculadora">
         <div class="contenido">
-          <h1 class="formula">Hidratación Basal</h1>
-          <h3>Completa todos los datos</h3>
-          <form action="peso">
-            <input type="number" placeholder="ingresar peso en kg" min="1" max="200" required>
-            <button type="submit">Calcular</button>
-          </form>
-          <p class="formula">70 cc/hr</p>
-          <p class="formula">m+m/2 105 cc/hr</p>
+          <h1>Hidratación Basal</h1>
+          <h3 class="item">Completa todos los datos</h3>
+            <input class="item" id="peso" type="number" placeholder="ingresar peso en kg">
+            <p class="item" id="error">*Debe completar correctamente los datos</p>
+            <button id="calcular">Calcular</button>
+            <p class="item resultado" id="resultado1">70 cc/hr</p>
+            <p class="item resultado"id="resultado2">m+m/2 105 cc/hr</p>
+            <p class="item resultado" id="resultado3">resultado 3</p>
         </div>
       </div>
    
@@ -35,3 +36,4 @@
     
 </body>
 </html>
+
