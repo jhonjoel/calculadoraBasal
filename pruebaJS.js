@@ -27,9 +27,9 @@ BUTTON.addEventListener("click", () => {
     ERROR.style.display = "none";
   } else {
     let hollidaySegar = HollidaySegar(peso);
-    RESULTADO1.innerHTML = " Docificación diaria: " + hollidaySegar [0] + " cc";
+    RESULTADO1.innerHTML = "Docificación diaria: " + hollidaySegar [0] + " cc";
     RESULTADO1.style.display = "block";
-    RESULTADO2.innerHTML = hollidaySegar [1] + " cc/h";
+    RESULTADO2.innerHTML = "Docificación por hora (m): " + hollidaySegar [1] + " cc/h";
     RESULTADO2.style.display = "block";
     RESULTADO3.innerHTML = "m+m/2: " + hollidaySegar [2] + " cc/h";
     RESULTADO3.style.display = "block";
