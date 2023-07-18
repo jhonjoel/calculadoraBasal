@@ -1,23 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
-body{
-    background: rgb(80, 205, 255); 
+body {
+    background: rgb(80, 205, 255);
     font-family: 'Montserrat', sans-serif;
     color: #3E363F;
 }
 
-
 #contenedor {
     width: 1000px;
     height: 500px;
-    text-align:center;
-    /* Estas 3 lineas se encargan de centrar el div vertical y horizontalmente */
+    text-align: center;
+    /* Estas 3 líneas se encargan de centrar el div vertical y horizontalmente */
     position: absolute;
     inset: 0;
     margin: auto;
     border-radius: 10px;
-    overflow: hidden; 
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+    overflow: hidden;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 #calculadora {
@@ -36,7 +35,7 @@ body{
 }
 
 .contenido {
-    /* Estas tres lineas van a centrar el contenido verticalmente dentro de cada div */
+    /* Estas tres líneas van a centrar el contenido verticalmente dentro de cada div */
     position: relative;
     top: 50%;
     transform: translateY(-50%);
@@ -45,31 +44,45 @@ body{
 }
 
 input {
-	width: 70%;
+    width: 70%;
     padding: 12px 15px;
     border: none;
     background-color: #eee;
 }
 
 button {
-  font-size: 15px;
-	font-weight: bold;
-	padding: 12px 45px;
-	border-radius: 30px;
-	background-color: #2e0afa;
-	border: 1px solid #7441ff;
-	color: #FFFFFF;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	transition: transform 20ms ease-in;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 12px 45px;
+    border-radius: 30px;
+    background-color: #2e0afa;
+    border: 1px solid #7441ff;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 20ms ease-in;
     transform: translateY(20%);
 }
 
 button:active {
-	transform: scale(0.95);
+    transform: scale(0.95);
 }
 
-.formula {
-    color:#2e0afa;
+.item {
+    color: #2e0afa;
     font-weight: bold;
+}
+
+.resultado {
+    color: #0A81D1;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 5px;
+    display: none;
+}
+
+#error {
+    color: red;
+    font-weight: bold;
+    display: none;
 }
